@@ -1,0 +1,16 @@
+{
+  "name": "dife-js",
+  "version": "0.0.1",
+  "authors": [
+    "Valdirene Neves <vaneves@vaneves.com>"
+  ],
+  "description": "Biblioteca JavaScript de integração com o Dife Panel",
+  "keywords": ["dife", "panel"],
+  "main": "src/dife.js",
+  "homepage": "http://dife.com.br",
+  "ignore": [
+    "*.json",
+    "example",
+    "readme.md"
+  ],
+}
