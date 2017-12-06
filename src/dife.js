@@ -12,7 +12,7 @@ var Dife = function (token) {
 
   var Request = function (token) {
 
-    var base = 'http://dev.dife.com.br/api/';
+    var base = 'https://dife.com.br/api/';
 
     this.get = function (url, success, error) {
       var http = create(success, error);
