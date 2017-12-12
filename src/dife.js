@@ -52,3 +52,30 @@ var Dife = function (token) {
 
   var request = new Request(token);
 };
+
+Dife.template = function (id, data) {
+
+  var trim = function (string) {
+    return string.replace(/^\s+|\s+$/gm,'');
+  }
+
+  var block = function (html, data) {
+    for (var i in data) {
+      html = html.replace(new RegExp("{{\\s+"+ i +"\\s+}}", "g"), data[i]);
+    }
+    return html;
+  };
+
+  var response = '';
+  var element = document.getElementById(id);
+  if (element != null && typeof data == 'object') {
+    var html = trim(element.innerHTML);
+    for (var i in data) {
+      if (!/^\d+$/.test(i)) {
+        return block(html, data);
+      }
+      response += block(html, data[i]);
+    }
+  }
+  return response;
+};
