@@ -6,8 +6,12 @@ var Dife = function (token) {
     return request.get('features', success, error);
   };
 
-  this.listValues = function (feature_id, callback) {
-    return request.get('features/'+ feature_id, callback);
+  this.listValues = function (feature_id, success, error) {
+    return request.get('features/'+ feature_id, success, error);
+  };
+
+  this.form = function (form_id, data, success, error) {
+    return request.post('forms/'+ form_id, data, success, error);
   };
 
   var Request = function (token) {
@@ -20,6 +24,14 @@ var Dife = function (token) {
       http.setRequestHeader('Authorization', 'Bearer ' + token);
       http.setRequestHeader('Content-Type', 'application/json');
       http.send();
+    };
+
+    this.post = function (url, data, success, error) {
+      var http = create(success, error);
+      http.open('POST', base + url, true);
+      http.setRequestHeader('Authorization', 'Bearer ' + token);
+      http.setRequestHeader('Content-Type', 'application/json');
+      http.send(JSON.stringify({field: data}));
     };
 
     var create = function (success, error) {
