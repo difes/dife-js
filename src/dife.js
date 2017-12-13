@@ -6,8 +6,12 @@ var Dife = function (token) {
     return request.get('features', success, error);
   };
 
-  this.listValues = function (feature_id, success, error) {
-    return request.get('features/'+ feature_id, success, error);
+  this.listValues = function (feature_id, success, error, page) {
+    var p = '';
+    if (typeof page != 'undefined' && page) {
+      p = '?page='+ page;
+    }
+    return request.get('features/'+ feature_id + p, success, error);
   };
 
   this.form = function (form_id, data, success, error) {
