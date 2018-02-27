@@ -1,0 +1,23 @@
+{
+  "name": "dife-js",
+  "version": "0.0.6",
+  "description": "Uma biblioteca JavaScript para integração com a API do Dife Panel",
+  "main": "src/dife.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/difepanel/dife-js.git"
+  },
+  "author": "Van Neves",
+  "homepage": "https://dife.com.br/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/difepanel/dife-js/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^3.3.12"
+  },
+  "scripts": {
+    "build": "uglifyjs src/dife.js -o dist/dife.min.js -c -m --source-map \"url='dist/dife.min.js.map'\""
+  }
+}
