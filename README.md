@@ -23,7 +23,7 @@ bower install dife-js --save
 Utilizando direto de nosso servidor 
 
 ```html
-<script src="https://dife.com.br/assets/js/dife-0.0.7.min.js"></script>
+<script src="https://dife.com.br/assets/js/dife-0.0.8.min.js"></script>
 ```
 
 ## Documentação da API
