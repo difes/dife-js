@@ -23,7 +23,7 @@ bower install dife-js --save
 Utilizando direto de nosso servidor 
 
 ```html
-<script src="https://dife.com.br/assets/js/dife-0.0.6.min.js"></script>
+<script src="https://dife.com.br/assets/js/dife-0.0.7.min.js"></script>
 ```
 
 ## Documentação da API
@@ -34,7 +34,7 @@ Para mais detalhes, acesse a documentação em nosso [site](https://dife.com.br/
 
 O método `listFeatures()` retorna uma lista com as funcionalidades cadastradas no site. Para utilizá-lo é necessário criar um instância do objeto `Dife`.
 
-```
+```javascript
 var dife = new Dife('CHAVE_PUBLICA_SITE');
 
 dife.listFeatures(function (response) {
@@ -46,7 +46,7 @@ dife.listFeatures(function (response) {
 
 O método `listValues()` retorna uma lista (com paginação) dos registros de uma determinada funcionalidade. Para utilizá-lo é necessário criar um instância do objeto `Dife`.
 
-``` javascript
+```javascript
 var dife = new Dife('CHAVE_PUBLICA_SITE');
 
 dife.listValues(id, function (response) {
@@ -58,7 +58,7 @@ dife.listValues(id, function (response) {
 
 O método `form()` envia os dados para o preenchimento de um determinado formulário. Para utilizá-lo é necessário criar um instância do objeto `Dife`.
 
-``` javascript
+```javascript
 var dife = new Dife('CHAVE_PUBLICA_SITE');
 
 dife.form(id, object, function (response) {
@@ -71,7 +71,7 @@ dife.form(id, object, function (response) {
 O método `template()` é utilizado para facilitar a renderização, caso você não utilize alguma biblioteca/framework que já possuia (como AngularJS). É um método estático, portando não deve ser chamado via intância, por não necessitar da chave.
 
 
-``` javascript
+```javascript
 var object = {
   title: 'Título de exemplo',
   description: 'Descrição de exemplo'
@@ -84,7 +84,7 @@ document.getElementById('local').innerHTML = html;
 
 Template HTML:
 
-``` html
+```html
 <div id="local"></div>
 
 <script type="text/dife" id="EXAMPLE">
