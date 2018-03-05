@@ -131,14 +131,14 @@ var Dife = function (token) {
             response.data = JSON.parse(this.responseText);
           }
           if (this.status == 200) {
-            if (typeof success === 'function') {
+            if (success && typeof success === 'function') {
               success(response);
             }
-            if (typeof cache === 'function') {
+            if (cache && typeof cache === 'function') {
               cache(response);
             }
           } else {
-            if (typeof error === 'function') {
+            if (error && typeof error === 'function') {
               error(response);
             }
           }
